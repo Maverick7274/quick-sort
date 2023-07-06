@@ -1,5 +1,12 @@
 # Quick Sort
 
+## Quick Links
+
+* [Slides(Presentation)](https://maverick7274.github.io/quick-sort/slides.html)
+* [Slides(PDF)](https://maverick7274.github.io/quick-sort/slides.pdf)
+* [Presentation Notes(Presentation)](https://maverick7274.github.io/quick-sort/Presenter-Notes.html)
+* [Presentation Notes(PDF)](https://maverick7274.github.io/quick-sort/Presenter-Notes.pdf)
+
 ## Introduction
 
 * Quick Sort is a widely used sorting algorithm in computer science that follows the divide-and-conquer strategy.
