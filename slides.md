@@ -4,28 +4,67 @@ title : "Quick Sort"
 slideNumber: true
 theme: uncover
 class: invert
+math: mathjax
 author: "Neelanjan Mukherji"
+style: |
+    .text-left {
+        text-align: left;
+    }
 ---
 # <!--fit-->Quick Sort
 
-###### Made by Neelanjan Mukherji & Amit Chaudhary
+###### <span style="color:grey;">By</span> : Neelanjan Mukherji & Amit Chaudhary
 
 ---
 
 ## Introduction
+
+<!-- Quick Sort is an "in-place" sorting algorithm, meaning it doesn't require additional memory proportional to the input size. -->
 
 * Quick Sort is a widely used sorting algorithm in computer science that follows the divide-and-conquer strategy.
 * It efficiently sorts a given list or array of elements by repeatedly partitioning it into two subarrays based on a chosen pivot element.
 
 ---
 
+## Algorithm
+
+<!-- The choice of the pivot is crucial. It can be the first, last, or any element from the list. -->
+
+* Choose a `pivot` element from the list. The pivot can be any element in the list.
+* Rearrange the list so that all elements smaller than the pivot come before it, and all elements greater than the pivot come after it.
+* The pivot element will be in its correct sorted position.
+
+---
+
+## Algorithm(Contd.)
+
+<!-- Partitioning is the process of rearranging the list based on the pivot. -->
+<!-- Smaller elements go to the left, and larger elements go to the right. -->
+
+* The list is now divided into two subarrays: one containing elements smaller than the pivot and another containing elements greater than the pivot.
+* Repeat the first three steps for each subarray, recursively applying Quick Sort until the entire list is sorted.
+
+---
+
+## Algorithm(Contd.)
+<!-- Recursive calls are made on the subarrays until they become small enough to be considered sorted. -->
+
+* Eventually, the subarrays become small enough that they are considered sorted, so the recursion stops.
+* Once all the recursive calls complete, the entire list will be sorted.
+
+---
+
+
 ## Time Complexity
 
-The time complexity of Quick Sort can be analyzed in different scenarios:
+<!-- The average and best-case time complexity of Quick Sort is $O(n log n)$, making it efficient for large datasets. -->
+<!-- However, in the worst-case scenario, the time complexity can degrade to $O(n^2)$ if the pivot selection is unfavorable. -->
 
-1. Average Case
-2. Best Case
-3. Worst Case
+<p class="text-left">The time complexity of Quick Sort can be analyzed in different scenarios:</p>
+
+* Average Case
+* Best Case
+* Worst Case
 
 ---
 
@@ -40,34 +79,21 @@ The time complexity of Quick Sort can be analyzed in different scenarios:
 ### Best Case
 
 * The best case occurs when the pivot selection consistently divides the array into two equal-sized subarrays.
-* In the best case, the time complexity of Quick Sort is also O(n log n).
+* In the best case, the time complexity of Quick Sort is also $O(n\ \log n)$.
 
 ---
 
 ### Worst Case
 
 * The worst case of Quick Sort occurs when the pivot selection is consistently unfavorable, resulting in highly imbalanced partitions.
-* For example, if the pivot is always the smallest or largest element in the array, each partitioning step divides the array into one subarray with (n-1) elements and another with no elements.
+* For example, if the pivot is always the smallest or largest element in the array, each partitioning step divides the array into one subarray with $(n-1)$ elements and another with no elements.
 
 ---
 
 ### Worst Case(Contd.)
 
-* In the worst case, Quick Sort's time complexity is O(n^2), which happens when the array is already sorted or contains many equal elements.
+* In the worst case, Quick Sort's time complexity is $O(n^2)$, which happens when the array is already sorted or contains many equal elements.
 * However, the worst-case scenario is less likely to occur in practice, especially with randomized pivot selection techniques.
-
----
-<!-- 
-### Space Complexity
-
-* Quick Sort has an in-place sorting nature, meaning it doesn't require additional memory proportional to the input size.
-* The space complexity of Quick Sort is determined by the recursive calls made during the sorting process.
-* In the average and best cases, the space complexity is O(log n) since the recursion depth is logarithmic to the input size.
-* However, in the worst case, the space complexity can be O(n) due to the skewed partitioning, as the recursion depth reaches 'n'.
-
---- -->
-
-## Algorithm
 
 ---
 
