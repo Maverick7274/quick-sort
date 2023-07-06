@@ -80,12 +80,10 @@ int partition(int arr[], int low, int high) {
     swap(&arr[i + 1], &arr[high]);  // Swap arr[i+1] and arr[high]
     return (i + 1);
 }
-```
 
 
-## Code(Contd.)
 
-```cpp
+
 // Recursive function to implement Quick Sort
 void quickSort(int arr[], int low, int high) {
     if (low < high) {
@@ -97,12 +95,10 @@ void quickSort(int arr[], int low, int high) {
         quickSort(arr, pivotIndex + 1, high);
     }
 }
-```
 
 
-## Code(Contd.)
 
-```cpp
+
 // Function to print the array
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
@@ -110,12 +106,10 @@ void printArray(int arr[], int size) {
     }
     printf("\n");
 }
-```
 
 
-## Code(Contd.)
 
-```cpp
+
 // Test the algorithm
 int main() {
     int arr[] = {9, 4, 7, 2, 1, 5, 3};
