@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 title : "Quick Sort"
 slideNumber: true
 theme: uncover
@@ -25,34 +25,212 @@ style: |
 * It efficiently sorts a given list or array of elements by repeatedly partitioning it into two subarrays based on a chosen pivot element.
 
 ---
-
 ## Algorithm
 
-<!-- The choice of the pivot is crucial. It can be the first, last, or any element from the list. -->
+* Choose a pivot element from the list. 
 
-* Choose a `pivot` element from the list. The pivot can be any element in the list.
-* Rearrange the list so that all elements smaller than the pivot come before it, and all elements greater than the pivot come after it.
-* The pivot element will be in its correct sorted position.
+|35|50|15|25|80|20|90|45|
+|-|-|-|-|-|-|-|-|
+
+```
+if p ≥ q then:
+    Stop
+
+if p < 1 then:
+    Stop
+else
+    Arr(p + 1) for p
+    Arr(q - 1) for q
+        continue
+```
 
 ---
 
 ## Algorithm(Contd.)
+
+|35|20|15|25|80|50|90|45|
+|-|-|-|-|-|-|-|-|
+
+```
+swap(p, q)
+    temp <- p
+    p <- q
+    q <- temp
+```
+
+---
+
+## Algorithm(Contd.)
+
+|25|20|15|35|80|50|90|45|
+|-|-|-|-|-|-|-|-|
+```
+if p & q overlapped then:
+    swap(q, pivot)
+    continue
+```
+
+---
+
+## Algorithm(Contd.)
+
+```
+partition(arr, p, q):
+pivot := arr[q]  // Choose the last element as the pivot
+i := (p - 1)  // Index of smaller element
+
+for j := p to q - 1 do:
+    if arr[j] <= pivot then:
+        i := i + 1
+        swap(arr[i], arr[j])  // Swap arr[i] and arr[j]
+
+swap(arr[i + 1], arr[q])  // Swap arr[i+1] and arr[q]
+return (i + 1)
+```
+
+---
+
+## Algorithm(Contd.)
+
+<table>
+
+<tr>
+    <th>Sub Array 1 </th>
+    <th>Pivot</th>
+    <th>Sub Array 2</th>
+</tr>
+
+<tr>
+<td>
+
+|25|20|15|
+|-|-|-|
+</td>
+<td>
+
+|35|
+|-|
+
+</td>
+<td>
+
+|80|50|90|45|
+|-|-|-|-|
+
+</td>
+</tr>
+</table>
+
+```
+quickSort(arr, p, q):
+    if p < q then:
+        pivotIndex <= partition(arr, p, q)
+        quickSort(arr, p, pivotIndex - 1)
+        quickSort(arr, pivotIndex + 1, q)
+```
+
+---
+
+## Algorithm(Contd.)
+
+* Recursively apply the above steps to the subarrays until the entire list is sorted.
+
+<table>
+
+<tr>
+    <th>Sub Array 1 </th>
+    <th>Pivot</th>
+    <th>Sub Array 2</th>
+</tr>
+
+<tr>
+<td>
+
+|15|20|25|
+|-|-|-|
+</td>
+<td>
+
+|35|
+|-|
+
+</td>
+<td>
+
+|80|50|45|90|
+|-|-|-|-|
+
+</td>
+</tr>
+</table>
+
+<table>
+
+<tr>
+    <th>Sub Array 1 </th>
+    <th>Pivot</th>
+    <th>Sub Array 2</th>
+</tr>
+
+<tr>
+<td>
+
+|15|20|25|
+|-|-|-|
+</td>
+<td>
+
+|35|
+|-|
+
+</td>
+<td>
+
+|45|50|80|90|
+|-|-|-|-|
+
+</td>
+</tr>
+</table>
+
+---
+
+## Algorithm(Contd.)
+
+* Final Sorted Array
+
+|15|20|25|35|45|50|80|90|
+|-|-|-|-|-|-|-|-|
+
+---
+
+<!-- ## Algorithm -->
+
+<!-- The choice of the pivot is crucial. It can be the first, last, or any element from the list. -->
+
+<!-- * Choose a `pivot` element from the list. The pivot can be any element in the list. -->
+<!-- * Rearrange the list so that all elements smaller than the pivot come before it, and all elements greater than the pivot come after it. -->
+<!-- * The pivot element will be in its correct sorted position. -->
+
+<!-- --- -->
+
+<!-- ## Algorithm(Contd.) -->
 
 <!-- Partitioning is the process of rearranging the list based on the pivot. -->
 <!-- Smaller elements go to the left, and larger elements go to the right. -->
 
-* The list is now divided into two subarrays: one containing elements smaller than the pivot and another containing elements greater than the pivot.
-* Repeat the first three steps for each subarray, recursively applying Quick Sort until the entire list is sorted.
+<!-- * The list is now divided into two subarrays: one containing elements smaller than the pivot and another containing elements greater than the pivot. -->
+<!-- * Repeat the first three steps for each subarray, recursively applying Quick Sort until the entire list is sorted. -->
 
----
+<!-- --- -->
 
-## Algorithm(Contd.)
+<!-- ## Algorithm(Contd.) -->
 <!-- Recursive calls are made on the subarrays until they become small enough to be considered sorted. -->
 
-* Eventually, the subarrays become small enough that they are considered sorted, so the recursion stops.
-* Once all the recursive calls complete, the entire list will be sorted.
+<!-- * Eventually, the subarrays become small enough that they are considered sorted, so the recursion stops. -->
+<!-- * Once all the recursive calls complete, the entire list will be sorted. -->
 
----
+<!-- --- -->
 
 
 ## Time Complexity
@@ -66,7 +244,7 @@ style: |
 * Best Case
 * Worst Case
 
----
+<!-- --- -->
 
 ### Average Case
 
@@ -74,14 +252,14 @@ style: |
 * The time complexity of Quick Sort in the average case is O(n log n), where 'n' represents the number of elements in the array.
 * This average time complexity arises due to the repeated partitioning of the array into halves.
 
----
+<!-- --- -->
 
 ### Best Case
 
 * The best case occurs when the pivot selection consistently divides the array into two equal-sized subarrays.
 * In the best case, the time complexity of Quick Sort is also $O(n\ \log n)$.
 
----
+<!-- --- -->
 
 ### Worst Case
 

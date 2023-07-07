@@ -13,6 +13,9 @@
 * It efficiently sorts a given list or array of elements by repeatedly partitioning it into two subarrays based on a chosen pivot element.
 
 
+
+
+
 ## Time Complexity
 
 The time complexity of Quick Sort can be analyzed in different scenarios:
