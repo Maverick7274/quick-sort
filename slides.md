@@ -246,7 +246,7 @@ quickSort(arr, p, q):
 * Best Case
 * Worst Case
 
-<!-- --- -->
+---
 
 ### Average Case
 
