@@ -1,9 +1,11 @@
 ---
-marp: false
+marp: true
 title : "Quick Sort"
 slideNumber: true
-theme: uncover
-class: invert
+theme: gaia
+class: 
+    - invert
+    - lead
 math: mathjax
 author: "Neelanjan Mukherji"
 style: |
@@ -13,7 +15,7 @@ style: |
 ---
 # <!--fit-->Quick Sort
 
-###### <span style="color:grey;">By</span> : Neelanjan Mukherji & Amit Chaudhary
+###### <span style="color:#2d2a2c;">By</span> : Neelanjan Mukherji & Amit Chaudhary
 
 ---
 
@@ -252,14 +254,14 @@ quickSort(arr, p, q):
 * The time complexity of Quick Sort in the average case is O(n log n), where 'n' represents the number of elements in the array.
 * This average time complexity arises due to the repeated partitioning of the array into halves.
 
-<!-- --- -->
+---
 
 ### Best Case
 
 * The best case occurs when the pivot selection consistently divides the array into two equal-sized subarrays.
 * In the best case, the time complexity of Quick Sort is also $O(n\ \log n)$.
 
-<!-- --- -->
+---
 
 ### Worst Case
 
